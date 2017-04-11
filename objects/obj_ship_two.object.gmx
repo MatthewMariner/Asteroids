@@ -145,7 +145,15 @@ switch(state) {
             if (timer == 60) {
                 with (instance_create(x, y, obj_projectile)) {
                     //direction = other.facing;
-                    direction = point_direction(x,y, obj_player.x, obj_player.y);
+                    if(obj_player)
+                    {
+                        direction = point_direction(x,y, obj_player.x, obj_player.y);
+                    } 
+                    else 
+                    {
+                        direction = other.facing;
+                    }
+                    
                     speed = 10;
                 }
             }
@@ -185,14 +193,23 @@ if ( check_collision_obj(vx, vy, obj_solid) )
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((obj_ship_two.hp) &gt; 0)
-{
-    (obj_ship_two.hp) = obj_ship_two.hp - other.damage;
-}
+            <string>sprite_index = spr_ship_two_s;
 
-if ((obj_ship_two.hp) &lt;= 0)
+
+if (iframes == 0) 
 {
-    instance_destroy();
+
+    if ((obj_ship_two.hp) &gt; 0)
+    {
+        (obj_ship_two.hp) = obj_ship_two.hp - other.damage;
+    }
+    
+    if ((obj_ship_two.hp) &lt;= 0)
+    {
+        //Hack?
+        io_clear();
+        instance_destroy();   
+    }
     
 }
 </string>

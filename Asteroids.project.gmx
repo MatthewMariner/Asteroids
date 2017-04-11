@@ -133,6 +133,7 @@
         <sprite>sprites\spr_ship_one</sprite>
         <sprite>sprites\spr_ship_one_s</sprite>
         <sprite>sprites\spr_ship_two</sprite>
+        <sprite>sprites\spr_ship_two_s</sprite>
       </sprites>
       <sprite>sprites\spr_enemy_death</sprite>
       <sprites name="comets">
@@ -186,6 +187,7 @@
       <script>scripts\string_to_array.gml</script>
       <script>scripts\init_part.gml</script>
       <script>scripts\check_spawn.gml</script>
+      <script>scripts\scr_menu.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -214,15 +216,20 @@
       </objects>
     </objects>
     <objects name="system">
-      <object>objects\obj_game</object>
-      <object>objects\obj_gameover</object>
-      <object>objects\obj_wave</object>
-      <object>objects\Input</object>
       <objects name="GUI">
         <object>objects\o_gui</object>
         <object>objects\o_gui_pad</object>
         <object>objects\o_gui_button</object>
         <object>objects\o_gui_vk</object>
+      </objects>
+      <objects name="Game">
+        <object>objects\obj_game</object>
+        <object>objects\obj_gameover</object>
+        <object>objects\obj_wave</object>
+      </objects>
+      <objects name="General">
+        <object>objects\Input</object>
+        <object>objects\obj_menu</object>
       </objects>
     </objects>
     <objects name="player">
@@ -236,9 +243,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_select</room>
     <room>rooms\rm_title</room>
     <room>rooms\rm_game</room>
-    <room>rooms\rm_select</room>
     <room>rooms\rm_items</room>
   </rooms>
   <help>
