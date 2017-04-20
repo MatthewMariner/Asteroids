@@ -25,10 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//No animation
+            <string>/// Initialize the enemy
+
+state = 'wait';
+
+//No animation
 image_speed = 0;
-//Picks one of the frames as the image
-image_index = irandom(2);
+
 //directions + speed
 direction = random(360);
 speed = 0.5 + random(2);
@@ -36,6 +39,12 @@ speed = 0.5 + random(2);
 hp = 0;
 damage = 0;
 iframes = 0;
+
+
+timeline_index = tl_ai;
+timeline_position = 0;
+timeline_running = true;
+timeline_loop = false;
 </string>
           </argument>
         </arguments>
@@ -81,11 +90,58 @@ iframes = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (iframes &gt; 0) {
+            <string>///iFrames &amp; HP
+
+if (iframes &gt; 0) {
     iframes --;
 }
 
 if (hp &lt;= 0) instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Control the states using a switch statement
+
+switch ( state )
+{
+
+    case 'wait' :
+        scr_wait_state();
+        break;
+    
+    case 'move up' :
+        scr_moveup_state();
+        break;
+
+    case 'move right' :
+        scr_moveright_state();
+        break;
+        
+    case 'move down' :
+        scr_movedown_state();
+        break;
+        
+    case 'move left' :
+        scr_moveleft_state();
+        break;
+}
 </string>
           </argument>
         </arguments>

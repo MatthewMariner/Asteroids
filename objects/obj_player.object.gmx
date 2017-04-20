@@ -114,7 +114,7 @@ y = min(y,room_height);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///   P l a y e r  M o v e m e n t
+            <string>///   C O N T R O L S
 
 disparar = keyboard_check(vk_space);
 arriba = keyboard_check(vk_up);
@@ -149,7 +149,7 @@ right = keyboard_check(vk_right);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Movimiento || Moviment
+            <string>/// P l a y e r  M o v e m e n t
 speed = (up - down) * v_movement;
 direction = direction + ((left - right) * v_turn);
 image_angle = direction;

@@ -178,6 +178,13 @@
         <script>scripts\st_game_items.gml</script>
         <script>scripts\st_game_in_level.gml</script>
       </scripts>
+      <scripts name="enemy">
+        <script>scripts\scr_wait_state.gml</script>
+        <script>scripts\scr_moveup_state.gml</script>
+        <script>scripts\scr_moveright_state.gml</script>
+        <script>scripts\scr_movedown_state.gml</script>
+        <script>scripts\scr_moveleft_state.gml</script>
+      </scripts>
     </scripts>
     <scripts name="utilities">
       <script>scripts\check_inputs_all.gml</script>
@@ -204,16 +211,16 @@
         <object>objects\obj_asteroid</object>
         <object>objects\obj_asteroid_s</object>
       </objects>
-      <object>objects\obj_enemy_death</object>
       <objects name="ships">
         <object>objects\obj_ship_one</object>
         <object>objects\obj_ship_two</object>
         <object>objects\obj_projectile</object>
       </objects>
-      <object>objects\obj_par_enemy</object>
       <objects name="comets">
         <object>objects\obj_comet</object>
       </objects>
+      <object>objects\obj_par_enemy</object>
+      <object>objects\obj_enemy_death</object>
     </objects>
     <objects name="system">
       <objects name="GUI">
@@ -242,6 +249,9 @@
       <object>objects\obj_pwrup_shield</object>
     </objects>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tl_ai</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\rm_select</room>
     <room>rooms\rm_title</room>
